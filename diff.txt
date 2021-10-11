@@ -4,8 +4,17 @@
     #define rep(a,x,n)       for(ll a=x;a<n;a++)
     #define ROF(a,x,n)       for(ll a=x;a>=n;a--)
     # define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-    #define MOD              1000000007
-     bool isPrime(int n)
+   
+    
+    int binaryserch(int arr[],int k,int s,int l)
+    {
+        if(s>l)return -1;
+        int mid=(s+l)/2;
+        if(arr[mid]==k)return mid;
+        if(k>arr[mid])return binaryserch(arr,k,mid+1,l);
+        return binaryserch(arr,k,s,mid-1);
+    }
+    bool isPrime(int n)
 {
     // Corner case
     if (n <= 1)
@@ -18,15 +27,6 @@
  
     return true;
 }
-    int binaryserch(int arr[],int k,int s,int l)
-    {
-        if(s>l)return -1;
-        int mid=(s+l)/2;
-        if(arr[mid]==k)return mid;
-        if(k>arr[mid])return binaryserch(arr,k,mid+1,l);
-        return binaryserch(arr,k,s,mid-1);
-    }
-   
    
     int main()
     {    
