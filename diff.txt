@@ -13,19 +13,7 @@
         if(k>arr[mid])return binaryserch(arr,k,mid+1,l);
         return binaryserch(arr,k,s,mid-1);
     }
-    bool isPrime(int n)
-    {
-        // Corner case
-        if (n <= 1)
-            return false;
-    
-        // Check from 2 to square root of n
-        for (int i = 2; i <= sqrt(n); i++)
-            if (n % i == 0)
-                return false; 
-    
-        return true;
-    }
+   
     int main()
     {    
         ll g;
